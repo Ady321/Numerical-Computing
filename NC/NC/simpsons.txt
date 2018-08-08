@@ -1,0 +1,27 @@
+#include<stdio.h>
+float fun(float x){
+	return(1/(1+x));
+}
+int main(){
+	float h=1,x1,x2,x3,x4,x5,x6,x7;
+	float y1,y2,y3,y4,y5,y6,y7,y8;
+	x1=0;
+	x2=x1+h;
+	x3=x2+h;
+	x4=x3+h;
+	x5=x4+h;
+	x6=x5+h;
+	x7=x6+h;
+	printf("Interval for x-->%f\t%f\t%f\t%f\t%f\t%f\t%f",x1,x2,x3,x4,x5,x6,x7);
+	y1=fun(x1);
+	y2=fun(x2);
+	y3=fun(x3);
+	y4=fun(x4);
+	y5=fun(x5);
+	y6=fun(x6);
+	y7=fun(x7);
+	printf("\n Interval for y-->%f\t%f\t%f\t%f\t%f\t%f\t%f",y1,y2,y3,y4,y5,y6,y7);
+	y8=(h/3)*((y0+y7)+2*(y2+y4+y6)+4*(y1+y3+y5);
+	printf("\n The Final Answer is--> %f",y8);
+	return 0;
+}

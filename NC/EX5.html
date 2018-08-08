@@ -1,0 +1,137 @@
+<html>
+<head>
+<link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
+</head>
+<body>
+<div id="templatemo_header_wrapper">
+	<div id="templatemo_header">
+<table height="80" border="0" align="center">
+			  <tr>
+				<td width="10" height="80"></td>
+				<td width="752" align="center">
+					<h1><font color="white">
+						<p><font face="Footlight MT Light">Numerical Computing</font></p>
+				  </font></h1>
+				</td>
+				<td width="10"></td>	
+			  </tr>
+</table>
+<table align="center">
+	<tbody><tr>
+		<h1>
+		    <p><font color="#00FF99">Bairstow Method</font></p></h1>
+	</tr></tbody>
+</table>
+<div id="ex1">
+	<div id="ex-1">
+		<table align="left">
+			<tbody><tr>
+				<td>
+				   <h3><font color="black">
+			            <pre>#include < stdio.h >
+#include < stdlib.h >
+#include < math.h >
+#define ESP 0.0001
+#define F(x) (x*x*x*x)-(3*x*x*x)+(20*x*x)+(44*x)+54
+int main(){
+  	double a[10]={1,-3,20,44,54},b[10],c[10],p,q,p1,q1,p2,q2,m,dP,dQ;
+  	int i=1,k,n=4;
+  	printf("\nEnter the value of p: ");
+  	scanf("%lf",&p);
+  	printf("\nEnter the value of q: ");
+  	scanf("%lf",&q);
+ 	printf("\t\t p \t\t q\n");
+  	b[-1]=c[-1]=0;
+  	b[0]=a[0];
+  	c[0]=a[0];
+	for(k=1;k<=4;k++){
+		b[k]=a[k]-p*b[k-1]-q*b[k-2];
+		c[k]=b[k]-p*c[k-1]-q*c[k-2];
+	}
+  	m=c[n-2]*c[n-2]-c[n-3]*(c[n-1]-b[n-1]);
+  	dP=-((b[n]*c[n-3]-b[n-1]*c[n-2])/m);
+  	dQ=-((b[n-1]*(c[n-1]-b[n-1])-b[n]*c[n-2])/m);
+  	p1=p+dP;
+  	q1=q+dQ;
+  	printf("\n\t     %lf \t     %lf",p1,q1);
+  	do{
+		p=p1;
+		q=q1;
+	 	for(k=1;k<=4;k++){
+                	b[k]=a[k]-p*b[k-1]-q*b[k-2];
+                	c[k]=b[k]-p*c[k-1]-q*c[k-2];
+        	}
+  		m=c[n-2]*c[n-2]-c[n-3]*(c[n-1]-b[n-1]);
+  		dP=-((b[n]*c[n-3]-b[n-1]*c[n-2])/m);
+  		dQ=-((b[n-1]*(c[n-1]-b[n-1])-b[n]*c[n-2])/m);
+  		p2=p+dP;
+  		q2=q+dQ;
+  		printf("\n\t     %lf \t     %lf",p2,q2);
+		if(fabs(p1-p2) < ESP && fabs(q1-q2) < ESP){
+           		printf("\n\nThe qudratic factor of the given polynomial is \n\n\tx^2 + (%.4lf)x + (%.4lf)\n",p2,q2);
+    			i=0;
+   		}else{
+     			p1=p2;
+     			q1=q2;
+   		}
+  	}while(i!=0);
+	return 0;
+}
+		</pre></h3></font></td>
+           </tr></tbody>
+	</table>
+</div></div>
+<div id="ct" align="center">
+<script language = JavaScript>
+<!--
+function TestArray(){
+var a = new Array(),b = new Array(),c = new Array();
+	var i=1,n=4;
+	for(i=0;i<5;i++){
+		a[i] = prompt("enter the array.", " ");
+	}
+	var p,q,p1,q1,p2,q2,m,dP,dQ;
+	p = prompt("enter the value of p.", " ");
+	q = prompt("enter the value of q.", " ");
+	document.write("<pre>","p","          q","</pre>");
+  	b[-1]=c[-1]=0;
+  	b[0]=a[0];
+  	c[0]=a[0];
+	for(k=1;k<=4;k++){
+		b[k]=a[k]-p*b[k-1]-q*b[k-2];
+		c[k]=b[k]-p*c[k-1]-q*c[k-2];
+	}
+  	m=eval(c[n-2]*c[n-2]-c[n-3]*(c[n-1]-b[n-1]));
+  	dP=eval(-((b[n]*c[n-3]-b[n-1]*c[n-2])/m));
+  	dQ=eval(-((b[n-1]*(c[n-1]-b[n-1])-b[n]*c[n-2])/m));
+  	p1=eval(p+dP);
+  	q1=eval(q + dQ);
+	 document.write("<pre>",Math.floor(p1*10000)/10000,"    ",Math.floor(q1*10000)/10000,"</pre><br>");
+  	do{
+		p=p1;
+		q=q1;
+	 	for(k=1;k<=4;k++){
+                	b[k]=a[k]-p*b[k-1]-q*b[k-2];
+                	c[k]=b[k]-p*c[k-1]-q*c[k-2];
+        	}
+  		m=eval(c[n-2]*c[n-2]-c[n-3]*(c[n-1]-b[n-1]));
+  		dP=eval(-((b[n]*c[n-3]-b[n-1]*c[n-2])/m));
+  		dQ=eval(-((b[n-1]*(c[n-1]-b[n-1])-b[n]*c[n-2])/m));
+  		p2=eval(p+dP);
+  		q2=eval(q+dQ);
+		document.write("<pre>", Math.floor(p2*10000)/10000,"    ",Math.floor(q2*10000)/10000,"<pre><br>");
+		if(p2*p2>0.0001 && q2*q2>0.0001){
+          document.write("qudratic factor is x^2 + ","<b>"+(Math.floor(p2*10000)/10000) + "<b>","x"," + ","<b>"+(Math.floor(q2*10000)/10000) + "<b>");
+    			i=0;
+   		}else{
+     			p1=p2;
+     			q1=q2;
+   		}
+  	}while(i!=0);
+}
+//-->
+</script>
+		<button id="btnTest" onClick="TestArray();">Bairstow Method</button>
+</div>
+</body>
+</html>

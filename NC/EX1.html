@@ -1,0 +1,102 @@
+<html>
+<head>
+<link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
+</head>
+<body>
+<div id="templatemo_header_wrapper">
+	<div id="templatemo_header">
+<table height="80" border="0" align="center">
+			  <tr>
+				<td width="10" height="80"></td>
+				<td width="752" align="center">
+					<h1><font color="white">
+						<p><font face="Footlight MT Light">Numerical Computing</font></p>
+				  </font></h1>
+				</td>
+				<td width="10"></td>	
+			  </tr>
+</table>
+<table align="center">
+	<tbody><tr>
+		<h1>
+		    <p><font color="#00FF99">False Position Method</font></p></h1>
+	</tr></tbody>
+</table>
+<div id="ex1">
+	<div id="ex-1">
+		<table align="left">
+			<tbody><tr>
+				<td>
+				   <h3><font color="black">
+			            <pre>#include < stdio.h >
+#include < stdlib.h >
+#include < math.h >
+#define ESP 0.0001
+#define F(x) (x*x*x*x)-(x)-10
+int main(){
+		float a,b,x,f1,f2,f0;
+  		int count=0;
+  		do{
+  			printf("\nEnter the value of a: ");
+  			scanf("%f",&a);
+  		}while(F(a) > 0);
+  		do{
+  			printf("\nEnter the value of b: ");
+ 			scanf("%f",&b);
+  		}while(F(b) < 0);
+  		printf("\n    a\t       b\t x\t   f0\t   f1\t   f2");</br>
+  		do{
+  			f0=F(a);
+  			f1=F(b);
+  			x=((a*f1)-(b*f0))/(f1-f0);
+  			f2=F(x);
+  			printf("\n%f %f %f %f %f %f",a,b,x,f0,f1,f2);</br>
+  			if(f0*f2<0){ 
+    				b=x;
+   			}else{
+    				a=x;
+			}
+  		}while(fabs(f2)>ESP);
+		printf("\n\n Root of the equation using false position method is = %f\n",x);
+}</pre></h3></font></td>
+			</tr></tbody>
+		</table>
+</div></div>
+<div id="ct" align="center">
+<script language="JavaScript">
+<!--
+function funStart(){
+var a,b,x,f0,f1,f2;
+var i=0;
+do{
+	a = window.prompt("enter the value of a.", " ");
+}while(funAb(a)>0);
+do{
+	b = window.prompt("enter the value of b.", " ");
+}while(funAb(b)<0);
+window.document.write("<pre>","it","      x","            F","</pre>");
+do{
+	f0 = funAb(a);
+	f1 = funAb(b);
+	x = ((a*f1)-(b*f0))/(f1-f0);
+	f2 = funAb(x);
+	i++;
+window.document.write("<pre>",i,"     ",Math.floor(x*10000)/10000,"     ",Math.floor(f2*10000)/10000,"</pre>");
+	if(f0*f2<0){
+		b = x;
+	}else{
+		a = x;
+	}
+}while(f2*f2 > 0.0001);
+window.document.write("root of th e equation is : ","<b>x = "+(Math.floor(x*10000)/10000) + "</b>");
+}
+function funAb(x){
+	x = (x*x*x*x)-x-10;
+	return(x);
+}
+//-->
+</script>
+<button id="btnTest" onClick="funStart();">False Position method</button>
+</div>
+</body>
+</html>

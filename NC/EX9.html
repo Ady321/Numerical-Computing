@@ -1,0 +1,77 @@
+<html>
+<head>
+<link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
+</head>
+<body>
+<div id="templatemo_header_wrapper">
+	<div id="templatemo_header">
+<table height="80" border="0" align="center">
+			  <tr>
+				<td width="10" height="80"></td>
+				<td width="752" align="center">
+					<h1><font color="white">
+						<p><font face="Footlight MT Light">Numerical Computing</font></p>
+				  </font></h1>
+				</td>
+				<td width="10"></td>	
+			  </tr>
+</table>
+<table align="center">
+	<tbody><tr>
+		<h1>
+		    <p><font color="#00FF99">Trapezoidal Method</font></p></h1>
+	</tr></tbody>
+</table>
+<div id="ex1">
+	<div id="ex-1">
+		<table align="left">
+			<tbody><tr>
+				<td>
+				   <h3><font color="black">
+			            <pre>#include < stdio.h >
+#include < stdlib.h >
+#include < math.h >
+#define F(x) 1/(1+(x*x))
+int main(){
+	float a,b,h=0.25,res,y=0,integral;
+	int i,N;
+	printf("enter the value of upper limit and lower limit \n");
+	scanf("%f\n%f",&b,&a);
+	N=(b-a)/h;
+	for(i=1;i < N;i++){
+		res=F(i*h);
+		y=y+res;
+	}
+	integral=(h/2)*(F(a)+F(b)+2*y);
+	printf("the value of the integral is %.4f\n",integral);
+}		</pre></h3></font></td>
+	      </tr></tbody>
+	</table>
+</div></div>
+<div id="ct" align="center">
+<script language = JavaScript>
+<!--
+function TestArray(){
+var a,i;
+var b,n,h,res,y=0,intg;
+a = prompt("enter the value of lower limit.", " ");
+b = prompt("enter the value of upper limit.", " ");
+h = prompt("enter the value of width.", " ");
+n = (b-a)/h;
+for(i = 1;i < n;i++){
+               res=funAb(i*h);
+               y=y+res;
+}
+intg = eval(h/2)*(funAb(a)+funAb(b)+2*y);
+document.write("The value of integral is : ",intg = Math.floor(intg*10000)/10000);
+}
+function funAb(x){
+	x = eval((1/(1+x*x)));
+	return(x);
+}
+//-->
+</script>
+		<button id="btnTest" onClick="TestArray();">Trapezoidal Method</button>
+</div>
+</body>
+</html>

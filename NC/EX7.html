@@ -1,0 +1,93 @@
+<html>
+<head>
+<link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
+</head>
+<body>
+<div id="templatemo_header_wrapper">
+	<div id="templatemo_header">
+<table height="80" border="0" align="center">
+			  <tr>
+				<td width="10" height="80"></td>
+				<td width="752" align="center">
+					<h1><font color="white">
+						<p><font face="Footlight MT Light">Numerical Computing</font></p>
+				  </font></h1>
+				</td>
+				<td width="10"></td>	
+			  </tr>
+</table>
+<table align="center">
+	<tbody><tr>
+		<h1>
+		    <p><font color="#00FF99">Gauss Sedial Method</font></p></h1>
+	</tr></tbody>
+</table>
+<div id="ex1">
+	<div id="ex-1">
+		<table align="left">
+			<tbody><tr>
+				<td>
+				   <h3><font color="black">
+			            <pre>#include < stdio.h >
+#include < stdlib.h >
+#include < math.h >
+#define F(y,z) ((17-y+2*z)/20)
+#define G(x,z) ((-18-3*x+z)/20)
+#define H(x,y) ((25-2*x+3*y)/20)
+int main(){
+  	double x=0,y=0,z=0,x1,y1,z1;
+  	int i=0,k=1;
+  	printf("\n\t Iterations        x\t\t     y\t\t     z\n");
+  	printf("\n\t       %d        %.4f  \t   %.4f   \t   %.4f",k,x,y,z);
+  	do{
+   		x1=F(y,z);
+   		y1=G(x,z);
+   		z1=H(x,y);
+		k++;
+   		if(fabs(x1-x)<0.0001 && fabs(y1-y)<0.0001 && fabs(z1-z)<0.0001){
+			printf("\n\nfinal Answer is :\n");
+     			printf("\nx1=%.4lf \nx2=%.4lf \nx3=%.4lf\n",x1,y1,z1);
+     			i=1;
+   		}else{
+     			x=x1;
+     			y=y1;
+     			z=z1;
+     			printf("\n\t       %d        %.4f  \t  %.4f   \t   %.4f",k,x,y,z);
+   		}
+  	}while(i!=1);
+	return 0;
+}			</pre></h3></font></td>
+		     </tr></tbody>
+		</table>
+</div></div>
+<div id="ct" align="center">
+<script language="JavaScript">
+<!--
+function TestArray(){
+var x=0,y=0,z=0,x1,y1,z1;
+var i=0,k=1;
+	document.write("<pre>","It","         x","             y","        z","</pre>");
+	document.write("<pre>", k,"          ",x,"            ",y,"           ",z,"</pre>");
+  	while(i != 1){
+   		x1=eval(((17-y+2*z)/20));
+   		y1=eval(((-18-3*x+z)/20));
+   		z1=eval(((25-2*x+3*y)/20));
+		k++;
+		if((x1-x) < 0.0001 && (y1-y) < 0.0001 && (z1-z) < 0.0001){
+     			i=1;
+			break;
+   		}else{
+     			x=x1;
+     			y=y1;
+     			z=z1;
+document.write("<pre>",k,"        ",Math.floor(x*10000)/10000,"         ",Math.floor(y*10000)/10000,"        ",Math.floor(z*10000)/10000,"</pre>");
+		}
+  	}
+	document.write(+Math.floor(x1*10000)/10000+"<br>",+Math.floor(y1*10000)/10000+"<br>",+Math.floor(z1*10000)/10000+"<br>");
+}
+//-->
+</script>
+<button id="btnTest" onClick="TestArray();">Gauss Sedial Method</button>
+</div>
+</body>
+</html>

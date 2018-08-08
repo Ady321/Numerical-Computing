@@ -1,0 +1,23 @@
+#include<stdio.h>
+float fun(float x,float y){
+	return(x*x+y);
+}
+int main(){
+	float y0=1,x0=0;
+	float y1,y2,x1,k1,k2;
+	float pk1,pk2,h=0.2;
+	k1=h*fun(x0,y0);
+	k2=h*fun(x0+h,y0+k1);
+	printf("k1=%f",k1);
+	printf("\tk2=%f",k2);
+	y1=y0+0.5*(k1+k2);
+	printf("\n y(0.2)=%f",y1);
+	x1=x0+h;
+	pk1=h*fun(x1,y1);
+	pk2=h*fun(x1+h,y1+pk1);
+	printf("\n k1=%f",pk1);
+	printf("\t k2=%f",pk2);
+	y2=y0+0.5*(pk1+pk2);
+	printf("\n y(0.4)=%f",y2);
+	return 0;
+}

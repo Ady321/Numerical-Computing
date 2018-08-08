@@ -1,0 +1,49 @@
+#include<stdio.h>
+#include<math.h>
+int check(float x[],float px[]);
+int main(){
+float a[3][4],x[3],px[3],temp;
+int i=0,j=0,k=1;
+for(i=0;i<3;i++){
+	for(j=0;j<3;j++){
+		printf("enter a[%d][%d]element:",i+1,j+1);
+		scanf("%f",&a[i][j]);
+		}
+		printf("enter b[%d]element:",i+1);
+		scanf("%f",&a[i][j]);
+	}
+for(i=0;i<3;i++){
+	temp=a[i][i];
+	if(temp!=1){
+	for(j=0;j<3;j++){
+		a[i][i]=a[i][j]/temp;
+		x[i]=0;
+		}
+	}
+}
+printf("approximation are:\n");
+do{
+	for(i=0;i<3;i++){
+		temp=0;
+		for(j=0;j<3;j++)
+			if(i!=j)
+				temp=temp+a[i][j]*x[j];
+				px[i]=x[i];
+				x[i]=(a[i][j]-temp)/a[i][j];
+}
+printf("iteration %d:",k++);
+	for(i=0;i<3;i++){
+		printf("x%d=%7.3f",i++,x[i]);
+		printf("\n");
+	}
+}while(check(x,px));
+return 0;
+}
+int check(float x[],float px[]){
+	int i=0;
+	for(i=0;i<3;i++){
+		if(fabs(px[i]-x[i])>0.001)
+			return 1;
+	}
+return 0;
+}

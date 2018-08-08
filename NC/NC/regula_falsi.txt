@@ -1,0 +1,29 @@
+#include<stdio.h>
+#define f(x)(x*x*x-4*x+1)
+int main()
+{
+	float a,b,x[5],y;
+	int i;
+	a=1;
+	b=-2;
+	if(f(a)<0 && f(b)>0)
+	{
+		a=0;	
+		b=1;
+	}
+	float cal()
+	{
+		for(i=0;x[i]=x[i+1];i++)
+		{
+			x[i]=(a*f(b)-b*f(a))/(f(b)-f(a));
+			a=x[i];
+			b=0;
+			break;
+		}
+		y=x[i];
+		return (y);
+	}
+	y=cal();
+	printf("The root is %f",y);
+	return 0;
+}

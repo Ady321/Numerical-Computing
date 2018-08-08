@@ -1,0 +1,107 @@
+<html>
+<head>
+<link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
+</head>
+<body>
+<div id="templatemo_header_wrapper">
+	<div id="templatemo_header">
+<table height="80" border="0" align="center">
+			  <tr>
+				<td width="10" height="80"></td>
+				<td width="752" align="center">
+					<h1><font color="white">
+						<p><font face="Footlight MT Light">Numerical Computing</font></p>
+				  </font></h1>
+				</td>
+				<td width="10"></td>	
+			  </tr>
+</table>
+<table align="center">
+	<tbody><tr>
+		<h1>
+		    <p><font color="#00FF99">Multipoint Iteration Method</font></p></h1>
+	</tr></tbody>
+</table>
+<div id="ex1">
+	<div id="ex-1">
+		<table align="left">
+			<tbody><tr>
+				<td>
+				   <h3><font color="black">
+			            <pre>#include < stdio.h >
+#include < stdlib.h >
+#include < math.h >
+#define F(x) (pow(x,3)+(x)+1)
+#define dF(x)(3*pow(x,2)+1)
+int main(){
+        int i=0;
+        float a,b,x0,x1,k,g[20];
+        while(1){
+                printf("enter the value of a=");
+                scanf("\n %f",&a);
+                printf("\n enter the value of b=");
+                scanf("\n %f",&b);
+                if(F(a)>0 && F(b)>0){
+                        printf("ENTER DIFFERNT VALUES\n\n");
+                }else{
+                        x0=(a+b)/2;
+			printf("\t\t-------------------------------\n");
+			printf("\t\t Iterations \t\t x\n");
+			printf("\t\t-------------------------------\n");
+                        while(1){
+                        	k=x0-(F(x0)/(2*dF(x0)));
+                        	x1=x0-((F(x0))/dF(k));
+				i++;
+                        	if(x1==x0){
+                        		break;
+                        	}
+                        	x0=x1;
+				printf("\t\t    %d \t\t     %f\n",i,x1);
+                    	}
+                	printf("\n\t the rot of the equation is %f\n",x1=floor(x1*10000)/10000);
+                	exit(0);
+              }
+    	}
+	return 0;
+}
+		</pre></h3></font></td>
+	      </tr></tbody>
+	</table>
+</div></div>
+<div id="ct" align="center">
+<script language="JavaScript">
+<!--
+function TestArray(){
+var a,b,x0,x1,k;
+var i=0,j=0;
+	a = prompt("enter the value of a.", " ");
+	b = prompt("enter the value of b."," ");
+	if(funAb(a)>0 && funAb(b)>0){
+			document.write("enter different values");
+	}else{
+		x0 = eval(a+b)/2;
+		document.write("<pre>","Iterations","      b","</pre>");
+		while(i != 1){
+			k=x0-(funAb(x0)/(2*((3*x0*x0)+1)));
+			x1=x0-(funAb(x0)/((3*k*k)+1));
+			j++;
+				if(x0==x1){
+					i=1;
+					break;
+				}
+				x0 = x1;
+				document.write("<pre>","  ",j,"          ",x1 = Math.floor(x1*10000)/10000,"</pre><br>");
+		}
+		document.write("root of equation is : ","<b>"+(Math.floor(x1*10000)/10000) + "</b>");
+	}
+}
+function funAb(x){
+	x = eval((x*x*x)+(x)+1);
+	return(x);
+}	
+//-->
+</script>
+<button id="btnTest" onClick="TestArray();">Multipoint Iteration method</button>
+</div>
+</body>
+</html>

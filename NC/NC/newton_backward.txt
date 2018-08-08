@@ -1,0 +1,32 @@
+#include <stdio.h>
+#define SIZE 5
+int fact ( int f )
+{
+	if(f<2)
+		return 1;
+	else
+		return f*fact(f-1);
+}
+int main()
+{
+	float x[SIZE] = { 0.10, 0.15, 0.20, 0.25, 0.30 };
+	float y[SIZE] = { 0.1003, 0.1511, 0.2027, 0.2553, 0.3093 };
+	float p, ux = 0.26, uy = y[SIZE-1], up = 1;
+	int i, j, k = 0, z = 0;
+	for(i=SIZE-1;i>=0;i--)
+	{
+		if(ux < x[i-1])
+			continue;
+			break;
+	}
+	p = (ux - x[i])/(x[1]-x[0]);
+	for(j=SIZE-1;j;j--,k++)
+	{
+		up = (up*(p + k));
+		for(z=SIZE-1;z>=SIZE-j;z--)
+			y[z] = y[z] - y[z-1];
+			uy = uy + up*y[i]/fact(k+1);
+	}
+	printf("Value of y(%g) = %f\n\n",ux, uy);
+	return 0;
+}

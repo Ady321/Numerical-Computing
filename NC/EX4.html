@@ -1,0 +1,125 @@
+<html>
+<head>
+<link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
+</head>
+<body>
+<div id="templatemo_header_wrapper">
+	<div id="templatemo_header">
+<table height="80" border="0" align="center">
+			  <tr>
+				<td width="10" height="80"></td>
+				<td width="752" align="center">
+					<h1><font color="white">
+						<p><font face="Footlight MT Light">Numerical Computing</font></p>
+				  </font></h1>
+				</td>
+				<td width="10"></td>	
+			  </tr>
+</table>
+<table align="center">
+	<tbody><tr>
+		<h1>
+		    <p><font color="#00FF99">Muller Method</font></p></h1>
+	</tr></tbody>
+</table>
+<div id="ex1">
+	<div id="ex-1">
+		<table align="left">
+			<tbody><tr>
+				<td>
+				   <h3><font color="black">
+			            <pre>#include < stdio.h >
+#include < stdlib.h >
+#include < math.h >
+#define F(x) (x*x*x)-(5*x)+1
+#define ESP 0.0001
+int main(){
+        float Xi2,Xi,Xi1,Yi2,Yi,Yi1,Xn,A,B,c;
+	int i=0;
+	while(1){
+                printf("\nenter the value of X(i-2)=");
+                scanf("\n %f",&Xi2);
+                printf("\n enter the value of X(i)=");
+                scanf("\n %f",&Xi);
+                if(F(Xi2)>0 && F(Xi)>0){
+                        printf("ENTER DIFFERNT VALUES\n\n");
+                }else{
+                        Xi1=(Xi2+Xi)/2;
+			printf("\t\t-------------------------------\n");
+			printf("\t\t Iterations \t\t x\n");
+			printf("\t\t-------------------------------\n");
+                        while(1){
+                		Yi=F(Xi);
+                		Yi1=F(Xi1);
+                		Yi2=F(Xi2);
+                		A=(((Yi1-Yi)*(Xi2-Xi)-(Yi2-Yi)*(Xi1-Xi))/((Xi1-Xi)*(Xi2-Xi)*(Xi1-Xi2)));
+                		B=((Yi1-Yi)/(Xi1-Xi))-(A*(Xi1-Xi));
+                		c=sqrt(B*B-4*A*Yi);
+        			if(B<0){
+                			Xn=Xi-((2*Yi)/(B-c));
+        			}else{
+                			Xn=Xi-((2*Yi)/(B+c));
+        			}
+				i++;
+				printf("\t\t    %d  \t\t     %f\n",i,Xn);
+ 				if(fabs(Xn-Xi) < ESP)
+   					goto jmp;
+				 Xi=Xn;
+ 			}
+			jmp:
+ 				printf("\n Root of the equation is %f \n",Xn=floor(Xn*10000)/10000);
+	             		exit(0);
+              }
+	}
+	return 0;
+}	
+		</pre></h3></font></td>
+	      </tr></tbody>
+	</table>
+</div></div>
+<div id="ct" align="center">
+<script language="JavaScript">
+<!--
+function TestArray(){
+var Xi2,Xi,Xi1,Yi2,Yi,Yi1,Xn,A,B,c;
+var i=0,j=0;
+Xi2 = prompt("enter the value of X(i-2)");
+Xi = prompt("enter the value of X(i)");
+       if(funAb(Xi2)>0 && funAb(Xi)>0){
+                      document.write("enter different values");
+                }else{
+                        Xi1 = eval((Xi2+Xi)/2);
+		        document.write("<pre>","Iterations","      x","</pre>");
+                        while(i !=1){
+                		Yi = eval(funAb(Xi));
+                		Yi1 = eval(funAb(Xi1));
+				Yi2 = eval(funAb(Xi2));
+				A = eval((((Yi1-Yi)*(Xi2-Xi)-(Yi2-Yi)*(Xi1-Xi))/((Xi1-Xi)*(Xi2-Xi)*(Xi1-Xi2))));
+				B = eval(((Yi1-Yi)/(Xi1-Xi))-(A*(Xi1-Xi)));
+				c = Math.sqrt(B*B-4*A*Yi);
+				if(B < 0){
+                			Xn=eval(Xi-((2*Yi)/(B-c)));
+        			}else{
+                			Xn=eval(Xi-((2*Yi)/(B+c)));
+        			}
+				j++;
+				document.write("<pre>","  ",j,"          ",Xn = Math.floor(Xn*10000)/10000,"</pre><br>");
+ 				if((Xn-Xi) > 20*0.0001){
+				  	break;
+				}
+				Xi=Xn;
+			}	
+			document.write("root of the equation is : ","<b>"+Math.floor(Xn*10000)/10000)+"<b>";
+              }
+}
+function funAb(x){
+	x = eval((x*x*x)-(5*x)+1);
+	return(x);
+}
+//-->
+</script>
+<button id="btnTest" onClick="TestArray();">Muller method</button>
+</div>
+
+</body>
+</html>

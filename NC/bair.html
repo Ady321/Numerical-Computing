@@ -1,0 +1,74 @@
+<html>
+<head>
+<link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
+</head>
+<body>
+<div id="templatemo_header_wrapper">
+	<div id="templatemo_header">
+<table height="80" border="0" align="center">
+			  <tr>
+				<td width="10" height="80"></td>
+				<td width="752" align="center">
+					<h1><font color="white">
+						<p><font face="Footlight MT Light">Numerical Computing</font></p>
+				  </font></h1>
+				</td>
+				<td width="10"></td>	
+			  </tr>
+</table>
+<ul class="nav-main" id="navigation" name="navigation">
+	<li><a href="n.html">Home</a></li>
+    
+    <li class="list"><a href="history.html">History</a></li>
+    
+    <li class="list"><a href="#">Methods &raquo;</a>
+	<ul class="nav-sub">
+    <li><a href="UNIT1.html">Unit 1: Polynomial Expression</a></li>
+ 		<li><a href="UNIT2.html">Unit 2: Linear System And Matricess</a></li>
+		<li><a href="UNIT3.html">Unit 3:Interpolation And Approximation</a></li>
+        <li><a href="UNIT4.html">Unit 4:Integration</a></li>
+ 		<li><a href="UNIT5.html">Unit 5:Differential Equation</a></li>
+		<li><a href="UNIT6.html">Unit 6:Simplex Method</a></li>
+	</ul>
+	</li>
+    
+    <li><a href="#">Programs &raquo;</a>
+   	<ul class="nav-sub">
+    <li><a href="unit11.html">Polynomial Expression</a></li>
+ 		<li><a href="unit22.html">Linear System And Matricess</a></li>
+        <li><a href="unit44.html">Integration</a></li>
+ 		<li><a href="unit55.html">Differential Equation</a></li>
+	</ul>
+      </li>
+   </ul>
+    <div id="ex1">
+	<div id="ex-1">
+		<table align="left">
+			<tbody><tr>
+				<td>
+				   <b><font size=5 color="green"><p><u>Steps For Solving Bairstow Method</u></p></FONT></B></br>
+<pre><ol><li>Find the the value of a<sub>0</sub>,a<sub>1</sub>,a<sub>2</sub> upto a<sub>n</sub> by comparing equation P(x)=a<sub>0</sub>x<sup>n</sup> + a<sub>1</sub>x<sup>n-1</sup> + ----- + a<sub>n</sub> = 0
+with equation given in the problem also find the value of n i.e, the highest degree of equation.</li></br>
+<li>Find the value of interval b<sub>1</sub>,b<sub>2</sub>,b<sub>3</sub> upto b<sub>n</sub> by using formula
+                 b<sub>k</sub> = a<sub>k</sub> - p*b<sub>k-1</sub> - q*b<sub>k-2</sub> with b<sub>-1</sub> = 0</li></br>
+<li>Find the value of interval c<sub>1</sub>,c<sub>2</sub>,c<sub>3</sub> upto c<sub>n</sub> by using formula
+                 c<sub>k</sub> = b<sub>k</sub> - p*c<sub>k-1</sub> - q*c<sub>k-2</sub> with c<sub>-1</sub> = 0</li></br>
+<li>Find the value of &Delta;p and &Delta;q by using formula
+                &Delta;p = -[b<sub>n</sub>*c<sub>n-3</sub> - b<sub>n-1</sub>*c<sub>n-2</sub>]
+                     <u>                          </u>
+                     [c<sup>2</sup><sub>n-2</sub> - c<sub>n-3</sub>[c<sub>n-1</sub> - b<sub>n-1</sub>]]
+                
+                &Delta;q = -[b<sub>n-1</sub>(c<sub>n-1</sub> - b<sub>n-1</sub>) - b<sub>n</sub>*c<sub>n-2</sub>]
+                     <u>                            </u>
+                       [c<sup>2</sup><sub>n-2</sub> - c<sub>n-3</sub>[c<sub>n-1</sub> - b<sub>n-1</sub>]]</li></br>
+<li>Find the value of p<sub>1</sub> and q<sub>1</sub> by using formula
+                p<sub>1</sub> = p<sub>0</sub> + &Delta;p
+                q<sub>1</sub> = q<sub>0</sub> + &Delta;q</li></br>
+<li>Continue the steps 2-5 for number of iteration given in the problem.</li></br>
+<li>Obtain the quadratic factor by using the equation x<sup>2</sup> + p<sub>x</sub> + q and by putting the final values of p and q.                
+          </pre></h3></font></td>
+			</tr></tbody>
+		</table>
+</body>
+</html>
+

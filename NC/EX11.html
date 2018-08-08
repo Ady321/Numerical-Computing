@@ -1,0 +1,89 @@
+<html>
+<head>
+<link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
+</head>
+<body>
+<div id="templatemo_header_wrapper">
+	<div id="templatemo_header">
+<table height="80" border="0" align="center">
+			  <tr>
+				<td width="10" height="80"></td>
+				<td width="752" align="center">
+					<h1><font color="white">
+						<p><font face="Footlight MT Light">Numerical Computing</font></p>
+				  </font></h1>
+				</td>
+				<td width="10"></td>	
+			  </tr>
+</table>
+<table align="center">
+	<tbody><tr>
+		<h1>
+		    <p><font color="#00FF99">Simpsons 3/8 Method</font></p></h1>
+	</tr></tbody>
+</table>
+<div id="ex1">
+	<div id="ex-1">
+		<table align="left">
+			<tbody><tr>
+				<td>
+				   <h3><font color="black">
+			            <pre>#include < stdio.h >
+#include < stdlib.h >
+#include < math.h >
+#define F(x) (1/(1+x*x))
+int main(){
+        int a,i;
+        float b,n,h,res,y=0,intg;
+        printf("enter the value of upper limit and lower limit\n");
+        scanf("%f\n%d",&b,&a);
+        printf("enter the value of the width\n");
+        scanf("%f",&h);
+        n=(b-a)/h;
+        for(i=1;i < n;i++){
+                if(i%3!=0){
+                        res=3*F(i*h);
+                        y=y+res;
+                }else{
+                        res=2*F(i*h);
+                        y=y+res;
+                }
+        }
+        intg=(3*h/8)*(F(a)+F(b)+y);
+        printf("\n%.4f",intg);
+}		</pre></h3></font></td>
+	      </tr></tbody>
+	</table>
+</div></div>
+<div id="ct" align="center">
+<script language = JavaScript>
+<!--
+function TestArray(){
+var a,i;
+var b,n,h,res,y=0,intg;
+a = prompt("enter the value of lower limit.", " ");
+b = prompt("enter the value of upper limit.", " ");
+h = prompt("enter the value of width.", " ");
+n = (b-a)/h;
+for(i = 1;i < n;i++){
+      if(i % 3 !=0){
+               res=3*funAb(i*h);
+               y=y+res;
+      }else{
+               res=2*funAb(i*h);
+               y=y+res;
+      }
+}
+intg = eval(3*h/8)*(funAb(a)+funAb(b)+y);
+document.write("The value of integral is : ",intg = Math.floor(intg*10000)/10000);
+}
+function funAb(x){
+	x = eval((1/(1+x*x)));
+	return(x);
+}
+//-->
+</script>
+		<button id="btnTest" onClick="TestArray();">Simpsons 3/8 Method</button>
+</div>
+</body>
+</html>

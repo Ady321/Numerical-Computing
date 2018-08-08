@@ -1,0 +1,111 @@
+<html>
+<head>
+<link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
+</head>
+<body>
+<div id="templatemo_header_wrapper">
+	<div id="templatemo_header">
+<table height="80" border="0" align="center">
+			  <tr>
+				<td width="10" height="80"></td>
+				<td width="752" align="center">
+					<h1><font color="white">
+						<p><font face="Footlight MT Light">Numerical Computing</font></p>
+				  </font></h1>
+				</td>
+				<td width="10"></td>	
+			  </tr>
+</table>
+<table align="center">
+	<tbody><tr>
+		<h1>
+		    <p><font color="#00FF99">Power Method</font></p></h1>
+	</tr></tbody>
+</table>
+<div id="ex1">
+	<div id="ex-1">
+		<table align="left">
+			<tbody><tr>
+				<td>
+				   <h3><font color="black">
+			            <pre>#include < stdio.h >
+#include < stdlib.h >
+#include < math.h >
+int main(){
+	float arr[3][3]={{4,1,0},{1,20,1},{0,1,4}};
+	int i=0,j,sum=0;
+	float x[3]={1,1,1};
+	float x1[3]={0,0,0};
+	float y=1,y1=0,gr;
+	do{
+		y=y1;
+		for(i=0;3>i;i++){
+			for(j=0;3>j;j++){
+				sum=sum+arr[i][j]*x[j];
+			}
+			x1[i]=sum;
+			sum=0;
+		}
+		gr=x1[0];
+                for(i=1;i<=2;i++){
+                	if(gr < x1[i]){
+                         	gr=x1[i];
+                 	}
+                }
+                y1=gr;
+                for(i=0;i<=2;i++){
+                	x[i]=x1[i]/(gr*1.0);
+                }
+	}while(y!=y1);
+		printf("largest eigen value is %.4f\n",y);
+		printf("corresponding eigen vector is \n");
+		for(i=0;i<=2;i++){
+			printf("%.4f\n",x[i]);
+		}
+}
+
+</pre></h3></font></td>
+			</tr></tbody>
+		</table>
+</div></div>
+<div id="ct" align="center">
+<script language="JavaScript">
+<!--
+function power(){
+		var arr=[[4,1,0],[1,20,1],[0,1,4]];
+		var i=0,j,sum=0;
+		var x=[1,1,1];
+		var x1=[0,0,0];
+		var y=1,y1=0,gr;
+		do{
+			y=y1;
+			for(i=0;3>i;i++){
+				for(j=0;3>j;j++){
+					sum=sum+arr[i][j]*x[j];
+				}
+				x1[i]=sum;
+				sum=0;
+			}
+			 gr=x1[0];       
+                        for(i=1;i<=2;i++){
+                                if(gr < x1[i]){
+                                        gr=x1[i];
+                                }
+                        }
+                        y1=gr;
+                        for(i=0;i<=2;i++){
+                                x[i]=x1[i]/(gr*1.0);
+                        }
+		}while(y!=y1);
+		document.write("largest eigen value is : ",Math.floor(y*10000)/10000,"</br>");
+		document.write("Corresponding eigen vector is","</br>");
+		for(i=0;i<=2;i++){
+				document.write(Math.floor(x[i]*10000)/10000 ,"</br>");
+		}
+}
+//-->
+</script>
+<button id="btnTest" onClick="power();">Power method</button>
+</div>
+</body>
+</html>
